@@ -1,1 +1,321 @@
+/* === RESET E CONFIGURAÇÕES GERAIS === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f7f0;
+    color: #1a3b2f;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* === ESTILOS PARA ALTO CONTRASTE (ativado por JS) === */
+body.alto-contraste {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.alto-contraste header,
+body.alto-contraste footer,
+body.alto-contraste .secao,
+body.alto-contraste .card {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+body.alto-contraste a {
+    color: #ffff00;
+}
+
+body.alto-contraste button {
+    background-color: #ffff00;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+/* === BOTÃO DE ACESSIBILIDADE FIXO === */
+.botao-acessibilidade {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#btnAcessibilidade {
+    background-color: #2e7d64;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+#btnAcessibilidade:hover {
+    background-color: #1e5a48;
+}
+
+.menu-acessibilidade {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    flex-direction: column;
+    min-width: 180px;
+}
+
+.menu-acessibilidade button {
+    background-color: #2e7d64;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    margin: 2px 0;
+    border-radius: 5px;
+}
+
+.menu-acessibilidade button:hover {
+    background-color: #1e5a48;
+}
+
+.menu-acessibilidade.mostrar {
+    display: flex;
+}
+
+/* === CABEÇALHO === */
+header {
+    background: linear-gradient(135deg, #1a5f4b, #2e7d64);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f4a261;
+    color: #1a3b2f;
+}
+
+/* === SEÇÕES PRINCIPAIS === */
+.secao {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #c8e6d9;
+}
+
+.secao article {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+body.alto-contraste .secao article {
+    background-color: #111;
+}
+
+.secao h2 {
+    color: #2e7d64;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+body.alto-contraste .secao h2 {
+    color: #ffff00;
+}
+
+.secao p, .secao li {
+    margin-bottom: 15px;
+}
+
+.imagem-destaque {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: block;
+}
+
+/* === TABELA === */
+.tabela-impactos {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #c8e6d9;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #2e7d64;
+    color: white;
+}
+
+.fonte {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* === GRID DE SOLUÇÕES === */
+.grid-solucoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #2e7d64;
+    margin-bottom: 10px;
+}
+
+/* === SIMULADOR (FORMULÁRIO) === */
+#formSimulador {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.pergunta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pergunta label {
+    font-weight: bold;
+}
+
+select, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #c8e6d9;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #2e7d64;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1e5a48;
+}
+
+.resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e8f5e9;
+    border-radius: 12px;
+}
+
+.barra-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.barra-nivel {
+    width: 0%;
+    height: 30px;
+    background-color: #f4a261;
+    border-radius: 10px;
+    transition: width 0.5s;
+}
+
+/* Baixo impacto = verde, Alto impacto = vermelho */
+.barra-nivel.impacto-baixo { background-color: #4caf50; }
+.barra-nivel.impacto-medio { background-color: #ff9800; }
+.barra-nivel.impacto-alto { background-color: #f44336; }
+
+/* === RODAPÉ === */
+footer {
+    background-color: #1a3b2f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .secao article {
+        padding: 20px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .grid-solucoes {
+        grid-template-columns: 1fr;
+    }
+}
